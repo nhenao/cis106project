@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+<section>
+    <div class="hero-body">
+        <div class="columns">
+            <div class="column is-12">
+                <div class="container content">
+                    <i class="is-large fa fa-calendar"></i>
+                    <h1 class="title">
+                    Log Your Assignments
+                    </h1>
+                    <h2 class="subtitle">
+                    Keep track of your assignments by logging and updating them here!
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="columns is-multiline is-centered" id="sectioncontainer">
+        {% for course in data.keys() %}
+        <div class="column is-two-fifths">
+            <article class="message is-primary">
+                <div class="message-header">
+                      <p>{{ course }}</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+                        <div class="board-item-content">
+                            {% for assignments in data[course] %}
+                                <h3>Due Date: </h3>
+                                <p>{{ duedate }}</p>
+                                <h3>Assignment: </h3>
+                                <p>{{ assignments }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<div class="box has-text-centered">
+  <a class="button" href="{{ url_for('assignments.add') }}">Add Assignment</a>
+</div>
+{% endblock content %}

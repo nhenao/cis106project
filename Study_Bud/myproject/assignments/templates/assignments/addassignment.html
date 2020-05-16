@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+<section>
+    <div class="hero-body">
+        <div class="columns">
+            <div class="column is-12">
+                <div class="container content">
+                    <i class="is-large fa fa-calendar"></i>
+                    <h1 class="title">
+                    Keep your self reminded about upcoming assignments.
+                    </h1>
+                    <h2 class="subtitle">
+                    Add to your assignments below!
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+     <div class="columns is-multiline is-centered" id="sectioncontainer" >
+        <div class="column is-four-fifths">
+            <article class="message is-info">
+                <div class="message-header">
+                    <p>Add an Assignment</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+                        <div class="board-item-content">
+                            <form method="POST">
+                                {{form.hidden_tag()}}
+                                <div class="field">
+                                    {{ form.duedate.label(class="label")}}
+                                    <div class="control">
+                                        <div class="select">
+                                          {{form.duedate()}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    {{ form.assignment.label(class="label")}}
+                                    <div class="control">
+                                        {{ form.assignment()}}
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    {{ form.course.label(class="label")}}
+                                    <div class="control">
+                                        {{ form.course()}}
+                                    </div>
+                                </div>
+                                <div class="field is-grouped">
+                                    <div class="control">
+                                        {{ form.submit(class="button is-link")}}
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <a class="button is-medium is-fullwidth" href="{{ url_for('assignments.assignments') }}">Click to View Assignments</a>
+    </div>
+    <br>
+    <br>
+</section>
+{% endblock content %}

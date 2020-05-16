@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="hero is-info is-medium is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title">
+            Welcome To The Studybud App.
+            </h1>
+            <h2 class="subtitle">
+            Studybud is a virtual productivity journal made for students around the world to stay on track <br> with their assignments, keep on schedule and kill it during the semester.
+            </h2>
+        </div>
+    </div>
+</section>
+<div class="box cta">
+    <p class="has-text-centered">
+        <span class="tag is-primary">StudyBud</span><br> The perfect tool for your success.
+    </p>
+</div>
+<section class="container">
+    <div class="columns features">
+        <div class="column is-4">
+            <div class="card is-shady">
+                <div class="card-image has-text-centered">
+                    <i class="fa fa-paw"></i>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <h4>Schedule</h4>
+                        <p>Weekly schedule for you to stay organized with things going on in and out of school. Add, and stay posted with your very own vertual schedule.</p>
+                        <p><a href="{{ url_for('schedule.add') }}">Add To Your Schedule</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-4">
+            <div class="card is-shady">
+                <div class="card-image has-text-centered">
+                    <i class="fa fa-empire"></i>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <h4>Assignments</h4>
+                        <p>Set up your semester, and add assignments to keep you on track with all of your courses. Add, Delete and Complete all of your assignments in the assignments section.</p>
+                        <p><a href="{{ url_for('assignments.setup') }}">Set Up Your Semester</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-4">
+            <div class="card is-shady">
+                <div class="card-image has-text-centered">
+                    <i class="fa fa-apple"></i>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <h4>Tasks Checklist</h4>
+                        <p>Daily tasks can get hard to complete with out something to help you stay on track. Add, Delete, and manage your daily tasks by using this tab as the perfect refrence for you to stay on track.</p>
+                        <p><a href="#">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
