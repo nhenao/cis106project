@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="container">
+    <div class="columns is-multiline is-centered" id="sectioncontainer">
+        {% for day in data.keys() %}
+        <div class="column is-two-fifths">
+            <article class="message is-primary">
+                <div class="message-header">
+                      <p>{{ day }}</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+                        <div class="board-item-content">
+                            {% for event in data[day] %}
+                                <p>{{ event }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<div class="box has-text-centered">
+  <a class="button" href="{{ url_for('schedule.add') }}">Add To Your Schedule</a>
+</div>
+
+
+{% endblock content %}

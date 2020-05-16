@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+       <div class="hero-body">
+        <div class="columns">
+            <div class="column is-12">
+                <div class="container content">
+                    <i class="is-large fa fa-calendar"></i>
+                    <h1 class="title">Keep on Track</h1>
+                    <h3 class="subtitle">
+                    Update your weekly schedule here!
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="columns is-multiline is-centered" id="sectioncontainer" >
+        <div class="column is-four-fifths">
+            <article class="message is-info">
+                <div class="message-header">
+                    <p>Add Event To Your Schedule</p>
+                </div>
+                <div class="message-body">
+                    <div class="board-item">
+                        <div class="board-item-content">
+                            <form method="POST">
+                                {{form.hidden_tag()}}
+                                <div class="field">
+                                    {{ form.day.label(class="label")}}
+                                    <div class="control">
+                                        <div class="select">
+                                          {{form.day()}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    {{ form.event.label(class="label")}}
+                                    <div class="control">
+                                        {{ form.event(class="textarea", placeholder="Write Post Here...")}}
+                                    </div>
+                                </div>
+                                <div class="field is-grouped">
+                                    <div class="control">
+                                        {{ form.submit(class="button is-link")}}
+                                    </div>
+                                    <div class="control">
+                                        <button class="button is-link is-light" input="clear">Clear</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <a class="button is-medium is-fullwidth" href="{{ url_for('schedule.posts') }}">Click to View Schedule</a>
+    </div>
+    <br>
+    <br>
+</section>
+
+{% endblock content %}
